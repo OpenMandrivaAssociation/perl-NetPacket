@@ -1,5 +1,5 @@
 %define upstream_name    NetPacket
-%define upstream_version 1.1.0
+%define upstream_version 1.1.1
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
