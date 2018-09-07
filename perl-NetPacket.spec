@@ -33,18 +33,14 @@ unusual situations difficult.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Build.PL installdirs=vendor
-./Build
+%__perl Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
-./Build test
+%make test
 
 %install
-%{__rm} -rf %{buildroot}
-./Build install destdir=%{buildroot}
-
-%clean
-rm -rf %buildroot
+%makeinstall_std
 
 %files
 %defattr(-,root,root)
