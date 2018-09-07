@@ -13,6 +13,18 @@ Source0:    http://www.cpan.org/modules/by-module//%{upstream_name}-%{upstream_v
 
 BuildRequires: perl(Module::Build::Compat)
 
+BuildRequires: perl(Carp)
+BuildRequires: perl(Exporter)
+BuildRequires: perl(ExtUtils::MakeMaker)
+BuildRequires: perl(File::Spec)
+BuildRequires: perl(IO::Handle)
+BuildRequires: perl(IPC::Open3)
+BuildRequires: perl(Test::More)
+BuildRequires: perl(constant)
+BuildRequires: perl(parent)
+BuildRequires: perl(strict)
+BuildRequires: perl(warnings)
+
 BuildArch: noarch
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
