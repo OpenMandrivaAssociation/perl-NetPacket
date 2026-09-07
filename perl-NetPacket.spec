@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %{upstream_version}
-Release:    1
+Release:    2
 
 Summary:    Assemble and disassemble ethernet packets
 License:    GPL+ or Artistic
@@ -46,7 +46,7 @@ unusual situations difficult.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
@@ -55,6 +55,8 @@ unusual situations difficult.
 %install
 %makeinstall_std
 
+find %{buildroot} -type f -name '*.pm' -exec chmod -x {} +
+if [ -d %{buildroot}%{_bindir} ]; then find %{buildroot}%{_bindir} -type f -exec chmod 755 {} +; fi
 %files
 %defattr(-,root,root)
 %doc Changes README
